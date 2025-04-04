@@ -53,8 +53,8 @@ jobs:
         with:
           context: .
           push: true
-          build-args:
-            - WORDPRESS_VERSION=${{ matrix.wordpress_version }}
-            - PHP_VERSION=${{ matrix.php_version }}
+          build-args: |
+            WORDPRESS_VERSION=${{ matrix.wordpress_version }}
+            PHP_VERSION=${{ matrix.php_version }}
           tags: ${{ vars.IMAGE_NAME }}:${{ matrix.wordpress_version }}-php${{ matrix.php_version }}
           platforms: linux/amd64,linux/arm64/v8
