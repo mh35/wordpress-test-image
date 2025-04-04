@@ -12,7 +12,7 @@ build-image:
     - >-
       docker buildx build --no-cache --push --platform
       linux/amd64,linux/arm64/v8 -t $CI_REGISTRY_IMAGE:$WORDPRESS_VERSION-php$PHP_VERSION
-      .
+      . --build-arg WORDPRESS_VERSION=$WORDPRESS_VERSION PHP_VERSION=$PHP_VERSION
   services:
     - name: docker:dind
       alias: docker

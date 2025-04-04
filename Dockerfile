@@ -1,4 +1,7 @@
+ARG PHP_VERSION
 FROM php:$PHP_VERSION-apache
+ARG PHP_VERSION
+ARG WORDPRESS_VERSION
 RUN apt-get update && apt-get install -y libbz2-dev libenchant-2-dev \
 libjpeg-dev libpng-dev libffi-dev libgd-dev libgmp-dev \
 libc-client-dev libkrb5-dev libicu-dev libldap-dev libpspell-dev \
